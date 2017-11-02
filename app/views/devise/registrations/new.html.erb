@@ -1,0 +1,51 @@
+<div class="col s12 z-depth-4 card-panel">
+  
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'login-form') do |f| %>
+  
+
+  <div class="row">
+      <div class="input-field col s12 center">
+      <img src="http://demo.geekslabs.com/materialize/v3.1/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
+      <p class="center login-form-text">Registresse!</p>
+      <%= devise_error_messages! %>
+      </div>
+  </div>
+
+  <div class="row margin">
+    <div class="input-field col s12">
+        <i class="material-icons prefix">person_outline</i>
+        <%= f.label :email, class: 'center-align' %>
+        <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+
+ 
+
+  <div class="row margin">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">lock_outline</i>
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="input-field col s12"> 
+      <i class="material-icons prefix">lock_outline</i>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.submit "Registrar", class: 'btn waves-effect waves-light col s12 light-blue darken-4' %>
+    </div>
+  </div>
+<% end %>
+
+<%#= render "devise/shared/links" %>
+</div>
