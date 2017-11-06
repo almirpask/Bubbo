@@ -1,0 +1,2 @@
+module Backoffice::QuestionnairesHelper
+end

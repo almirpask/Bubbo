@@ -1,0 +1,200 @@
+<aside id="left-sidebar-nav">
+  <ul id="slide-out" class="side-nav fixed leftside-navigation">
+    <li class="user-details cyan darken-2">
+      <div class="row">
+        <div class="col col s4 m4 l4">
+          <%= image_tag  "avatar/avatar-7.png", class:"circle responsive-img valign profile-image cyan"%>
+        </div>
+        <div class="col col s8 m8 l8">
+          <ul id="profile-dropdown-nav" class="dropdown-content">
+            <li>
+              <a href="#" class="grey-text text-darken-1">
+                <i class="material-icons">face</i> Profile</a>
+            </li>
+            <li>
+              <a href="#" class="grey-text text-darken-1">
+                <i class="material-icons">settings</i> Settings</a>
+            </li>
+            <li>
+              <a href="#" class="grey-text text-darken-1">
+                <i class="material-icons">live_help</i> Help</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#" class="grey-text text-darken-1">
+                <i class="material-icons">lock_outline</i> Lock</a>
+            </li>
+            <li>
+              <a href="#" class="grey-text text-darken-1">
+                <i class="material-icons">keyboard_tab</i> Logout</a>
+            </li>
+          </ul>
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">John Doe
+            <i class="mdi-navigation-arrow-drop-down right"></i>
+          </a>
+          <p class="user-roal">Administrator</p>
+        </div>
+      </div>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-cyan active">
+            <i class="material-icons">dashboard</i>
+            <span class="nav-text">Home</span>
+          </a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <%= link_to backoffice_home_path do %>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Index</span>
+                  <% end %>
+
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-cyan">
+            <i class="material-icons">dvr</i>
+            <span class="nav-text">Cadastros</span>
+          </a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <%= link_to  backoffice_subjects_path do %>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span> Matérias</span>
+                  <% end%>
+
+              </li>
+              <li>
+                <%= link_to  backoffice_classrooms_path do %>
+                <i class="material-icons">keyboard_arrow_right</i>
+                <span> Turmas </span>
+                <% end%>
+
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header waves-effect waves-cyan">
+            <i class="material-icons">web</i>
+            <span class="nav-text">Layouts</span>
+          </a>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a href="layout-light.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Light Layout</span>
+                </a>
+              </li>
+              <li>
+                <a href="layout-dark.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Dark Layout</span>
+                </a>
+              </li>
+              <li>
+                <a href="layout-semi-dark.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Semi Dark Layout</span>
+                </a>
+              </li>
+              <li>
+                <a href="layout-fixed-footer.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Fixed Footer</span>
+                </a>
+              </li>
+              <li>
+                <a href="layout-menu-native-scroll.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Menu Native Scroll</span>
+                </a>
+              </li>
+              <li>
+                <a href="layout-menu-collapsed.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Menu Collapsed</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold">
+          <a class="collapsible-header  waves-effect waves-cyan">
+            <i class="material-icons">photo_filter</i>
+            <span class="nav-text">Cadastros</span>
+          </a>
+          <div class="collapsible-body">
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <a href="ui-basic-buttons.html">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span>Second level</span>
+                </a>
+              </li>
+              <li class="bold">
+                <a class="collapsible-header  waves-effect waves-cyan">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span class="nav-text">Second level child</span>
+                </a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <a href="ui-basic-buttons.html">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                        <span>Third level</span>
+                      </a>
+                    </li>
+                    <li class="bold">
+                      <a class="collapsible-header  waves-effect waves-cyan">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                        <span class="nav-text">Third level child</span>
+                      </a>
+                      <div class="collapsible-body">
+                        <ul class="collapsible" data-collapsible="accordion">
+                          <li>
+                            <a href="ui-basic-buttons.html">
+                              <i class="material-icons">keyboard_arrow_right</i>
+                              <span>Forth level</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="ui-extended-buttons.html">
+                              <i class="material-icons">keyboard_arrow_right</i>
+                              <span>Forth level</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="../documentation" target="_blank">
+        <i class="material-icons">import_contacts</i>
+        <span class="nav-text">Documentação</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://pixinvent.ticksy.com" target="_blank">
+        <i class="material-icons">help_outline</i>
+        <span class="nav-text">Suporte</span>
+      </a>
+    </li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+    <i class="material-icons">menu</i>
+  </a>
+</aside>

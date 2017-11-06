@@ -1,0 +1,41 @@
+<div id="basic-form" class="section">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col s10">
+                        <h4 class="header2">Turmas</h4>
+                    </div>
+                    <div class="col s2">
+                        <%= link_to  new_backoffice_classroom_path, class:"waves-effect waves-light  btn green darken-1" do  %>
+                            <i class="material-icons right">add</i> Novo</a>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Materia</th>
+                                    <th>Professor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @classrooms.each do |classroom|%>
+                                    <tr>
+                                        <td> <%= classroom.subject.description %> </td>
+                                        <td> <%= classroom.teacher.email %> </td>
+                                    </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= render  "layouts/shareds/footer" %>
+    <%= render  "layouts/shareds/loader" %>

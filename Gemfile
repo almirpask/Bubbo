@@ -41,6 +41,8 @@ gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'material_icons'
 
+gem 'perfect-scrollbar-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -1,0 +1,21 @@
+<nav class="deep-purple" role="navigation">
+    <div class="nav-wrapper container">
+        <%= link_to "Bubbo", root_path, class: "brand-logo", id: "logo-container" %>
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <%= link_to "Alunos", new_user_session_path %>
+            </li>
+            <li>
+                <%= link_to "Professores", backoffice_home_path %>
+            </li>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+            <li>
+                <a href="#">Navbar Link</a>
+            </li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+            <i class="material-icons">menu</i>
+        </a>
+    </div>
+</nav>

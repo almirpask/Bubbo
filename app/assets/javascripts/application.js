@@ -13,13 +13,16 @@
 //= require rails-ujs
 //= require turbolinks
 //= require materialize-sprockets
+//= require perfect-scrollbar
 //= require_tree .
 
 
 
 
+
 $(window).on('load', function() {
-    setTimeout(function() {
-        $('body').addClass('loaded');
-    }, 200);
+  setTimeout(function() {
+      $('body').addClass('loaded');
+  }, 200);
 });
+
