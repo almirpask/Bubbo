@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :teachers
   namespace :backoffice do
     get 'home', to: 'home#index'
-    resources :subjects, only: [:index, :new, :create]
+    resources :subjects, except: [:show,:destroy]
     resources :classrooms, only: [:index, :new, :create]
     resources :questionnaires, only: [:index, :new, :create]
   

@@ -1,3 +1,4 @@
+/*style*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700);
 .materialize-red {
   background-color: #e51c23 !important;
@@ -6019,6 +6020,12 @@ li.home:before {
   background: #e6e6e6;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("fonts/material-design-icons/MaterialIcons-Regular.ttf") format("truetype"), url("fonts/material-design-icons/MaterialIcons-Regular.woff2") format("woff2"), url("fonts/material-design-icons/MaterialIcons-Regular.woff") format("woff"), url("../../../fonts/material-design-icons/MaterialIcons-Regular.eot");
+}
 
 .material-icons {
   font-family: 'Material Icons';
@@ -6167,7 +6174,7 @@ li.home:before {
   position: absolute;
   left: 48%;
   top: 46%;
-  background: url("https://pixinvent.com/materialize-material-design-admin-template/images/avatar/avatar-2.png") no-repeat center center;
+  background: url("avatar/avatar-2.png") no-repeat center center;
   z-index: 1001;
 }
 
@@ -7107,7 +7114,7 @@ Cards
 }
 
 #flight-card .card-content-bg {
-  background: url("https://pixinvent.com/materialize-material-design-admin-template/images/gallary/3.png") no-repeat center center;
+  background: url("gallary/3.png") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7216,19 +7223,19 @@ Cards
 }
 
 .bg-image-1 {
-  background-image: url("https://pixinvent.com/materialize-material-design-admin-template/images/cards/macbook.png");
+  background-image: url("cards/macbook.png");
   width: 100%;
   background-size: cover;
 }
 
 .bg-image-2 {
-  background-image: url("https://pixinvent.com/materialize-material-design-admin-template/images/cards/iphone.png");
+  background-image: url("cards/iphone.png");
   width: 100%;
   background-size: cover;
 }
 
 .bg-image-3 {
-  background-image: url("https://pixinvent.com/materialize-material-design-admin-template/images/cards/applewatch.png");
+  background-image: url("cards/applewatch.png");
   width: 100%;
   background-size: cover;
 }

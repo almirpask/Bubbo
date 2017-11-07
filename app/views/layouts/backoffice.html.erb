@@ -16,15 +16,21 @@
       <div class="loader-section section-left "></div>
       <div class="loader-section section-right "></div>
     </div>
+    
     <%= render "layouts/shareds/backoffice_nav" %>
     
     <div id="main">
+      
       <div class="wrapper">
         <%= render "layouts/shareds/aside" %>
         <section id="content">
           <%= yield %>
         </section>
       </div>  
+      
     </div>
+
+    <%= render  "layouts/shareds/backoffice_footer" %>
+    
   </body>
 </html>
