@@ -1,0 +1,42 @@
+<div id="basic-form" class="section">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <h4 class="header2">Informações da Classe</h4>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <%= form_for([:backoffice, @classroom]) do |f| %>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12 m6">
+                                        <%= collection_select(:classroom, :subject_id, Subject.all, :id, :description,{include_blank: "Escolha uma Matéria", disabled: true}) %>
+                                            <label>Matérias</label>
+                                    </div>
+
+                                    <div class="input-field col s12 m6">
+
+                                        <%= collection_select(:classroom, :teacher_id, Teacher.all, :id, :email,{include_blank: "Escolha um Professor", disabled: true}) %>
+
+                                            <label>Professores</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button type="submit" class="btn btn-waves  ">Salvar</button>
+                        </div>
+                        <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= render  "layouts/shareds/loader" %>
