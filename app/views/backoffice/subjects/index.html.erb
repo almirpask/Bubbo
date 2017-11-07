@@ -17,13 +17,28 @@
                         <table>
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Descricao</th>
+                                    
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <% @subjects.each do |subject|%>
                                     <tr>
+                                        <td><%= subject.id %></td>
                                         <td><%= subject.description %></td>
+                                        <td>
+                                            <%= link_to edit_backoffice_subject_path(subject.id)do %>
+                                                <i class="material-icons">edit</i>
+                                            <% end %>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn-flat disabled" >
+                                                <i class="material-icons red-text">close</i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 <% end %>
                             </tbody>
@@ -35,5 +50,5 @@
     </div>
 </div>
 
-<%= render  "layouts/shareds/footer" %>
-    <%= render  "layouts/shareds/loader" %>
+
+<%= render  "layouts/shareds/loader" %>
