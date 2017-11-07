@@ -1,0 +1,29 @@
+<div id="basic-form" class="section">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <h4 class="header2"><%= action%></h4>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <%= form_for([:backoffice, @subject]) do |f| %>
+
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.text_field :description %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" class="btn btn-waves  ">Salvar</button>
+                        </div>
+                        <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render  "layouts/shareds/loader" %>
