@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106011633) do
+ActiveRecord::Schema.define(version: 20171110125500) do
+
+  create_table "alternatives", force: :cascade do |t|
+    t.string "description"
+    t.boolean "aswer"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_alternatives_on_question_id"
+  end
 
   create_table "classrooms", force: :cascade do |t|
     t.integer "subject_id"
@@ -23,10 +32,20 @@ ActiveRecord::Schema.define(version: 20171106011633) do
 
   create_table "questionnaires", force: :cascade do |t|
     t.integer "teacher_id"
-    t.string "question"
+    t.integer "classroom_id"
+    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_questionnaires_on_classroom_id"
     t.index ["teacher_id"], name: "index_questionnaires_on_teacher_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "description"
+    t.integer "questionnaire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["questionnaire_id"], name: "index_questions_on_questionnaire_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -36,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171106011633) do
   end
 
   create_table "teachers", force: :cascade do |t|
+    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -53,6 +73,7 @@ ActiveRecord::Schema.define(version: 20171106011633) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
