@@ -19,13 +19,19 @@
                                 <tr>
                                     <th>Materia</th>
                                     <th>Professor</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <% @classrooms.each do |classroom|%>
                                     <tr>
                                         <td> <%= classroom.subject.description %> </td>
-                                        <td> <%= classroom.teacher.email %> </td>
+                                        <td> <%= classroom.teacher.name %> </td>
+                                        <td>
+                                            <%= link_to edit_backoffice_classroom_path(classroom.id)do %>
+                                                <i class="material-icons">edit</i>
+                                            <% end %>
+                                        </td>
                                     </tr>
                                 <% end %>
                             </tbody>
