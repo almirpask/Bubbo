@@ -9,7 +9,14 @@ Rails.application.routes.draw do
     resources :subjects, except: [:show,:destroy]
     resources :classrooms, except: [:show,:destroy]
     resources :questionnaires, except: [:show,:destroy]
+    
   
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :questions, only: [:create]
+    end
   end
 
   get 'site', to: 'site/home#index'
