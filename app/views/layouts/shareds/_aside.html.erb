@@ -29,7 +29,7 @@
                 <i class="material-icons">keyboard_tab</i> Logout</a>
             </li>
           </ul>
-          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">John Doe
+          <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav"><%= current_teacher.name %>
             <i class="mdi-navigation-arrow-drop-down right"></i>
           </a>
           <p class="user-roal">Administrator</p>
@@ -81,46 +81,15 @@
         <li class="bold">
           <a class="collapsible-header waves-effect waves-cyan">
             <i class="material-icons">web</i>
-            <span class="nav-text">Layouts</span>
+            <span class="nav-text">Questionarios</span>
           </a>
           <div class="collapsible-body">
             <ul>
               <li>
-                <a href="layout-light.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Light Layout</span>
-                </a>
-              </li>
-              <li>
-                <a href="layout-dark.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Dark Layout</span>
-                </a>
-              </li>
-              <li>
-                <a href="layout-semi-dark.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Semi Dark Layout</span>
-                </a>
-              </li>
-              <li>
-                <a href="layout-fixed-footer.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Fixed Footer</span>
-                </a>
-              </li>
-              <li>
-                <a href="layout-menu-native-scroll.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Menu Native Scroll</span>
-                </a>
-              </li>
-              <li>
-                <a href="layout-menu-collapsed.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Menu Collapsed</span>
-                </a>
-              </li>
+                <%= link_to  backoffice_questionnaires_path do %>
+                <i class="material-icons">keyboard_arrow_right</i>
+                <span> Novo </span>
+                <% end%>
             </ul>
           </div>
         </li>
