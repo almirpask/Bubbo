@@ -1,0 +1,55 @@
+<div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="col s12">
+                            <h4 class="header2"><%= action %></h4>
+                        </div>
+    
+                    </div>
+                    <div class="row">
+                        <%= form_for([:backoffice, @questionnaire]) do |f| %>
+    
+                            <div class="row">
+                                <div class="col s12">
+                                    <div>
+                                            <%= f.text_field :teacher_id, value:current_teacher.id, hidden:"true" %>
+                                    </div>
+                                    <div class="row">
+                                            
+                                        <div class="input-field col s12 m6">
+                                            <%#= f.collection_select(:classroom_id, Classroom.all, :id, :id_and_description) %>
+                                            <%= f.select :classroom_id, @classrooms %>
+                                        </div>
+                                        <div class="col s12 m6">
+                                            <p>
+                                                <%= f.check_box :active, {},true %>
+                                                <%= f.label :active, "questionario ativo"%>
+                                            </p>        
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="submit" class="btn btn-waves  right">Salvar</button>
+                            </div>
+                        <% end %>
+                        <div class="divider"></div>
+                        <div id="app"></div>
+                        <% if @mode%> 
+                            <%= javascript_pack_tag "questionnaire/entry" %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+    </script>
+    
+    <%= render  "layouts/shareds/loader" %>
