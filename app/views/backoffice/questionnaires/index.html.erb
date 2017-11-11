@@ -1,0 +1,50 @@
+<div id="basic-form" class="section">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <div class="row">
+                        <div class="col s10">
+                            <h4 class="header2">Disciplinas</h4>
+                        </div>
+                        <div class="col s2">
+                            <%= link_to  new_backoffice_questionnaire_path, class:"waves-effect waves-light  btn green darken-1" do  %>
+                                <i class="material-icons right">add</i> Novo</a>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form class="col s12">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Ativo</th>
+                                        <th></th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @questionnaires.each do |questionnaire|%>
+                                        <tr>
+                                            <td> <%= questionnaire.id %> </td>
+                                            <td> <%= questionnaire.teacher.name %> </td>
+                                            <td> <%= (questionnaire.active) ? 'Ativo' : 'Inativo' ;%> </td>
+                                            <td>
+                                                <%= link_to edit_backoffice_questionnaire_path(questionnaire.id)do %>
+                                                    <i class="material-icons">edit</i>
+                                                <% end %>
+                                            </td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <%= render  "layouts/shareds/loader" %>
