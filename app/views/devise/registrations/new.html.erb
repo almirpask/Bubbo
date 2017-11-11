@@ -14,8 +14,16 @@
   <div class="row margin">
     <div class="input-field col s12">
         <i class="material-icons prefix">person_outline</i>
+        <%= f.label :name, class: 'center-align' %>
+        <%= f.text_field :name, autofocus: true %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="input-field col s12">
+        <i class="material-icons prefix">person_outline</i>
         <%= f.label :email, class: 'center-align' %>
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.email_field :email%>
     </div>
   </div>
 
