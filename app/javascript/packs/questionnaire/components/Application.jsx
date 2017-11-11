@@ -3,15 +3,24 @@
 // of the page.
 
 import React, {Component} from 'react'
-import Table from './Table'
+import List from './List'
 import Modal from './Modal'
 
 
 export default class Application extends Component{
-  
+  constructor(props){
+    super(props)
+
+    this.state = {questions: []}
+  }
   openModal(){
     $('#modal1').modal('open');
   }
+
+  componentDidMount() {
+    
+  }
+  
 
   render(){
     return (
@@ -22,7 +31,7 @@ export default class Application extends Component{
                 <button type="submit" className="btn btn-waves  right green" onClick={this.openModal} href="#modal1">Adicionar</button>
             </div>
             <Modal/>
-            <Table/>
+            <List questions={this.state.questions}/>
         </div>
       </div>
     )
