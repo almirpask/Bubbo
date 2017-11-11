@@ -2,6 +2,7 @@
   "name": "bubo",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "^3.0.2",
     "babel-preset-react": "^6.24.1",
     "perfect-scrollbar": "^1.1.0",
     "prop-types": "^15.6.0",
