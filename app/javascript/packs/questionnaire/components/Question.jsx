@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-export default class Modal extends Component{
+export default class Question extends Component{
     constructor(props){
         super(props)
         this.state= {
@@ -30,10 +30,10 @@ export default class Modal extends Component{
             description: this.state.description
         }
         //alert(question)
-        $.post('/api/v1/questions', {question}, data => {console.log(data)})
+        $.post('/api/v1/questions', {question}, data => {console.log(data)}).success( this.props.refresh() )
 
     }
- 
+    
     componentDidMount(){
         $('.modal').modal();
     }
