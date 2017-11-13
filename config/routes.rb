@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   
 
+  namespace :api do
+    namespace :v1 do
+      get 'alternatives/create'
+    end
+  end
+
   devise_for :teachers, :controllers => { registrations: 'teacher_devise' }
   namespace :backoffice do
     get 'home', to: 'home#index'
@@ -15,8 +21,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :alternatives, only: [:create, :edit, :update]
       resources :questions, only: [:create]
+      
       get 'questions/questionnaire/:id', to: 'questions#questionnaire'
+      get 'alternatives/question/:id', to: 'alternatives#question'
       
     end
   end
