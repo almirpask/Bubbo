@@ -10,23 +10,14 @@ export default class List extends Component{
 			questionnaire_id: $('#questionnaire_id').val()
 		}
 		this.renderRows = this.renderRows.bind(this)
-		this.renderRows2 = this.renderRows2.bind(this)
+		this.openAlternative = this.openAlternative.bind(this)
 		this.refresh()
 	}
 	
-	renderRows(){
-		
-		
-		return this.state.questions.map(list => (
-			
-			<tr key={list.id}>
-				<td>{list.number}</td>
-				<td>{list.description}</td>
-				<td><i className="material-icons">edit</i></td>
-			</tr>		
-		))
+	openAlternative(id){
+		this.props.openAlternative(id)
 	}
-	renderRows2(){
+	renderRows(){
 		let list = this.props.questions || []
 		
 		return list.map(list => (
@@ -35,6 +26,7 @@ export default class List extends Component{
 				<td>{list.number}</td>
 				<td>{list.description}</td>
 				<td><i className="material-icons">edit</i></td>
+				<td><a onClick={()=>(this.openAlternative(list.id))}><i className="material-icons" >border_color</i></a></td>
 			</tr>		
 		))
 	}
@@ -56,11 +48,12 @@ export default class List extends Component{
 								<th>#</th>
 								<th>Question</th>
 								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							
-							{this.renderRows2()}
+							{this.renderRows()}
 						</tbody>
 				</table>
 			</div>

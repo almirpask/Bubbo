@@ -60,7 +60,7 @@ export default class Question extends Component{
                         </div>
                     </div>
                     <div className="modal-footer">
-                        <a href="#!" className="modal-action modal-close waves-effect waves-red btn-flat yellow-text text-darken-4">Fechar</a>
+                        <a className="modal-action modal-close waves-effect waves-red btn-flat yellow-text text-darken-4">Fechar</a>
                         <a className="modal-action modal-close waves-effect waves-green btn-flat green-text" onClick={this.handleSubmit}>Salvar</a>
                     </div>
                 </div>

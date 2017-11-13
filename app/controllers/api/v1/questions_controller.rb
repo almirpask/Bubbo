@@ -10,7 +10,8 @@ class Api::V1::QuestionsController < BackofficeController
             format.json { render json: @question}
         end
     end
-
+    
+    
 
     def questionnaire
         @id = params.permit(:id)
@@ -24,6 +25,7 @@ class Api::V1::QuestionsController < BackofficeController
 
     private 
 
+  
     def question_params
         params.require( :question ).permit(:number, :description, :questionnaire_id)
     end
