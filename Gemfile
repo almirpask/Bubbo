@@ -40,7 +40,7 @@ gem 'jquery-rails'
 # Sempre inclua
 gem 'materialize-sass'
 gem 'material_icons'
-
+gem 'rack-cors'
 gem 'perfect-scrollbar-rails'
 
 # Use Redis adapter to run Action Cable in production
