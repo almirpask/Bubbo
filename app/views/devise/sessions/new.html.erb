@@ -2,8 +2,8 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'login-form') do |f| %>
     <div class="row">
         <div class="input-field col s12 center">
-        <img src="http://demo.geekslabs.com/materialize/v3.1/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-        <p class="center login-form-text">Bubboss</p>
+        
+        <p class="center login-form-text">Bubbo</p>
         </div>
     </div>
     <div class="row margin">
@@ -17,7 +17,7 @@
     <div class="row margin">
       <div class="input-field col s12">
           <i class="material-icons prefix">lock_outline</i>
-          <%= f.label :password, class: 'center-align' %>
+          <%= f.label :password, "Senha",class: 'center-align' %>
           <%= f.password_field :password, autofocus: true, class: 'valdate'%>
       </div>
     </div>
