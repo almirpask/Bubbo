@@ -3,6 +3,9 @@ class Backoffice::QuestionnairesController < BackofficeController
     before_action :set_questionnaire, only: [:edit, :update]
 
     def index
+        arq = File.new("./erro.txt", "w+")
+        arq.puts "hello world"
+        arq.close
         @questionnaires = Questionnaire.all
     end
 
@@ -39,7 +42,7 @@ class Backoffice::QuestionnairesController < BackofficeController
         @questionnaire = Questionnaire.find(params[:id])
     end
     def params_questionnaire
-        params.require(:questionnaire).permit(:teacher_id, :active, :classroom_id)
+        params.require(:questionnaire).permit(:teacher_id, :active, :classroom_id, :theme)
     end
 
     def load_classrooms

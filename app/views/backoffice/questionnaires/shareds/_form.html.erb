@@ -13,31 +13,28 @@
                             <input type="text" id="questionnaire_id" hidden="true" value="<%= @questionnaire.id %>">
                         </div>
                         <%= form_for([:backoffice, @questionnaire]) do |f| %>
-    
                             <div class="row">
-
                                 <div class="col s12">
                                     <div>
-                                            <%= f.text_field :teacher_id, value:current_teacher.id, hidden:"true" %>
+                                        <%= f.text_field :teacher_id, value:current_teacher.id, hidden:"true" %>
                                     </div>
                                     <div class="row">
-                                            
                                         <div class="input-field col s12 m6">
                                             <%#= f.collection_select(:classroom_id, Classroom.all, :id, :id_and_description) %>
                                             <%= f.select :classroom_id, @classrooms %>
                                         </div>
-                                        <div class="col s12 m6">
-                                            <p>
-                                                <%= f.check_box :active, {},true %>
-                                                <%= f.label :active, "questionario ativo"%>
-                                            </p>        
+                                        <div class="input-field col s12 m6">
+                                            <%#= f.collection_select(:classroom_id, Classroom.all, :id, :id_and_description) %>
+                                            <%= f.text_field :theme %>
+                                            <%= f.label :theme %>
                                         </div>
-                                    </div>                                    
+                                    </div>
+                                    <div class="row">
+                                        <button type="submit" class="btn btn-waves  right">Salvar</button>
+                                    </div>                             
                                 </div>
                             </div>
-                            <div class="row">
-                                <button type="submit" class="btn btn-waves  right">Salvar</button>
-                            </div>
+                            
                         <% end %>
                         <div class="divider"></div>
                         <div id="app"></div>
