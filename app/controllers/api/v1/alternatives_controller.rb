@@ -1,4 +1,4 @@
-class Api::V1::AlternativesController <  BackofficeController
+class Api::V1::AlternativesController <  Api::V1::ApiController
 	before_action :set_alternative, only: [:edit, :update]
 	def create
 		@alternative = Alternative.create(alternative_params)
