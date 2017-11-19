@@ -8,31 +8,15 @@
         <div class="col col s8 m8 l8">
           <ul id="profile-dropdown-nav" class="dropdown-content">
             <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Profile</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">settings</i> Settings</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">live_help</i> Help</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">lock_outline</i> Lock</a>
-            </li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">keyboard_tab</i> Logout</a>
+              <%= link_to destroy_teacher_session_path, class:"grey-text text-darken-1", :method => :delete do %>
+                <i class="material-icons">keyboard_tab</i> Logout
+              <%end%>
             </li>
           </ul>
           <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav"><%= current_teacher.name %>
             <i class="mdi-navigation-arrow-drop-down right"></i>
           </a>
-          <p class="user-roal">Administrator</p>
+          
         </div>
       </div>
     </li>
@@ -93,73 +77,7 @@
             </ul>
           </div>
         </li>
-        <li class="bold">
-          <a class="collapsible-header  waves-effect waves-cyan">
-            <i class="material-icons">photo_filter</i>
-            <span class="nav-text">Cadastros</span>
-          </a>
-          <div class="collapsible-body">
-            <ul class="collapsible" data-collapsible="accordion">
-              <li>
-                <a href="ui-basic-buttons.html">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span>Second level</span>
-                </a>
-              </li>
-              <li class="bold">
-                <a class="collapsible-header  waves-effect waves-cyan">
-                  <i class="material-icons">keyboard_arrow_right</i>
-                  <span class="nav-text">Second level child</span>
-                </a>
-                <div class="collapsible-body">
-                  <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                      <a href="ui-basic-buttons.html">
-                        <i class="material-icons">keyboard_arrow_right</i>
-                        <span>Third level</span>
-                      </a>
-                    </li>
-                    <li class="bold">
-                      <a class="collapsible-header  waves-effect waves-cyan">
-                        <i class="material-icons">keyboard_arrow_right</i>
-                        <span class="nav-text">Third level child</span>
-                      </a>
-                      <div class="collapsible-body">
-                        <ul class="collapsible" data-collapsible="accordion">
-                          <li>
-                            <a href="ui-basic-buttons.html">
-                              <i class="material-icons">keyboard_arrow_right</i>
-                              <span>Forth level</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="ui-extended-buttons.html">
-                              <i class="material-icons">keyboard_arrow_right</i>
-                              <span>Forth level</span>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
       </ul>
-    </li>
-    <li>
-      <a href="../documentation" target="_blank">
-        <i class="material-icons">import_contacts</i>
-        <span class="nav-text">Documentação</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://pixinvent.ticksy.com" target="_blank">
-        <i class="material-icons">help_outline</i>
-        <span class="nav-text">Suporte</span>
-      </a>
     </li>
   </ul>
   <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
