@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -29,7 +32,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
-
+gem 'simple_token_authentication', '~> 1.0'
 #gem "thor", "~> 0.19.1"
 
 gem 'foreman'
