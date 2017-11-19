@@ -1,6 +1,6 @@
-class BackofficeController < ActionController::Base
+class BackofficeController < ApplicationController
     layout 'backoffice'
-    
     before_action :authenticate_teacher!
+    
 end
   
