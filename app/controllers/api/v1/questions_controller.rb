@@ -1,4 +1,4 @@
-class Api::V1::QuestionsController < BackofficeController
+class Api::V1::QuestionsController <  Api::V1::ApiController
     def index
         
     end
