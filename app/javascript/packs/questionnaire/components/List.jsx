@@ -11,7 +11,7 @@ export default class List extends Component{
 		}
 		this.renderRows = this.renderRows.bind(this)
 		this.openAlternative = this.openAlternative.bind(this)
-		this.refresh()
+		//this.refresh()
 	}
 	
 	openAlternative(id){
@@ -32,9 +32,9 @@ export default class List extends Component{
 	}
 
 	refresh(){
-		$.get(`/api/v1/questions/questionnaire/${this.state.questionnaire_id}.json`,{},(data) => {
+		$.get(`/backoffice/questions/questionnaire/${this.state.questionnaire_id}.json`,{},(data) => {
 			this.setState({questions: data}),
-			console.log(data)
+			console.log("list" + data)
 		})
 	}
 

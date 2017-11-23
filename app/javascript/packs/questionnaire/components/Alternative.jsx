@@ -46,14 +46,14 @@ export default class Question extends Component{
         }
         console.log(alternative)
         if(this.state.edit){
-            Axios.put(`/api/v1/alternatives/${this.state.alternative_id}`, {alternative}).then((response)=>{
-                this.setState({edit: false, alternative_id: null}),
-                console.log(response),
+            Axios.put(`/backoffice/alternatives/${this.state.alternative_id}.json`, {alternative}).then((response)=>{
+                this.setState({edit: false, alternative_id: null, description: ''}),
+                console.log("erro:" + response),
                 this.props.refreshAlternatives()
             })
         }else{
             console.log(alternative);
-            $.post('/api/v1/alternatives', {alternative}, data => {console.log(data)}).done(()=> this.props.refreshAlternatives())
+            $.post('/backoffice/alternatives', {alternative}, data => {console.log(data)}).done(()=> this.props.refreshAlternatives())
         }
         
     }
@@ -62,7 +62,7 @@ export default class Question extends Component{
         
         if(update){
             this.setState({edit: true, alternative_id: id})
-            $.get(`/api/v1/alternatives/${id}/edit.json`, {}, data => {console.log(data) , this.setState({answer: (data.aswer? true: false), description: data.description})})
+            $.get(`/backoffice/alternatives/${id}/edit.json`, {}, data => {console.log(data) , this.setState({answer: (data.aswer? true: false), description: data.description})}).done(()=>{console.log(this.state.description)})
         }else{
             this.setState({edit: false, alternative_id: null})
         }

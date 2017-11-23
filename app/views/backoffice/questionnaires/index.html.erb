@@ -18,7 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nome</th>
+                                        <th>Tema</th>
                                         <th>Ativo</th>
                                         <th></th>
                                         
@@ -28,7 +28,7 @@
                                     <% @questionnaires.each do |questionnaire|%>
                                         <tr>
                                             <td> <%= questionnaire.id %> </td>
-                                            <td> <%= questionnaire.teacher.name %> </td>
+                                            <td> <%= questionnaire.theme %> </td>
                                             <td> <%= (questionnaire.active) ? 'Ativo' : 'Inativo' ;%> </td>
                                             <td>
                                                 <%= link_to edit_backoffice_questionnaire_path(questionnaire.id)do %>

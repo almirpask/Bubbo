@@ -6,10 +6,10 @@ class Backoffice::LoginController < ApplicationController
         @user = User.where(:email => @params[:email]).where(:ra => @params[:ra])
         
         unless @user.empty?
-            @return = {token: @user[0].authentication_token, name: @user[0].name}
+            @return = {token: @user[0].authentication_token,user_id: @user[0].id, name: @user[0].name}
             render json: @return
         else    
-            @return = {token: "", name: ""}
+            @return = {token: "", user_id: "",  name: ""}
             render json: @return, status: 404
         end
         # render json: @auth 

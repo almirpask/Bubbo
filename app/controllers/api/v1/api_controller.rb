@@ -12,16 +12,5 @@ class Api::V1::ApiController < ApplicationController
       throw(:warden, scope: :user )unless current_user.presence
 
     end
-
-    def setModel
-        if current_teacher.presence
-            Teacher
-        else
-            User
-        end
-    end
-    
-
-
 end
   

@@ -29,6 +29,15 @@
                                             <%= f.label :theme %>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                            <div class="col s12 m6">
+                                                <p>
+                                                    <%= f.check_box :active, {},true %>
+                                                    <%= f.label :active, "questionario ativo"%>
+                                                </p>        
+                                            </div>
+                                        </div>     
                                     <div class="row">
                                         <button type="submit" class="btn btn-waves  right">Salvar</button>
                                     </div>                             

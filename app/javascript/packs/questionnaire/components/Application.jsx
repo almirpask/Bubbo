@@ -37,14 +37,15 @@ export default class Application extends Component{
 		
 	}
 	refresh(){
-		$.get(`/api/v1/questions/questionnaire/${this.state.questionnaire_id}.json`,{},(data) => {
+		$.get(`/backoffice/questions/questionnaire/${this.state.questionnaire_id}.json`,{},(data) => {
 			this.setState({questions: data}),
-			console.log('app'+data)
+			console.log('carregou: '+data.length + ' atualizou isso: ' + this.state.questions.length)
 		})
 	}
 	refreshAlternatives(){
-		$.get(`/api/v1/alternatives/question/${this.state.question_id}.json`,{},(data) => {
+		$.get(`/backoffice/alternatives/question/${this.state.question_id}.json`,{},(data) => {
 			this.setState({alternatives: data})
+			
 		})
 	}
 	

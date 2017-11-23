@@ -30,7 +30,7 @@ export default class Question extends Component{
             description: this.state.description
         }
         //alert(question)
-        $.post('/api/v1/questions', {question}, data => {console.log(data)}).success( this.props.refresh() )
+        $.post('/backoffice/questions', {question}, data => {console.log(data), this.props.refresh()})
 
     }
     
@@ -48,11 +48,11 @@ export default class Question extends Component{
                             <div className="col s12">
                                 <div className="input-field col s4">
                                     <input type="number" id="number" value={this.state.number} onChange={this.changeNumber}/>
-                                    <label htmlFor="number">Numero da pergunta</label>
+                                    <label htmlFor="number" className="active">Numero da pergunta</label>
                                 </div>
                                 <div className="input-field col s8">
                                     <input type="text" id="description" value={this.state.description} onChange={this.changeDescription}/>
-                                    <label htmlFor="description">Descrição</label>   
+                                    <label htmlFor="description" className="active" >Descrição</label>   
                                 </div>
                                 
                                 

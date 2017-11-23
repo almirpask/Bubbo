@@ -17,7 +17,9 @@ class Api::V1::QuestionsController <  Api::V1::ApiController
         @id = params.permit(:id)
         @questions = Question.where(:questionnaire_id => @id[:id])
         
-        render json: @questions
+        respond_to do |format|
+            format.json { render json: @questions}
+        end
     end
 
 

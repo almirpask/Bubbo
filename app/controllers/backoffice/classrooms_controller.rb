@@ -3,6 +3,7 @@ class Backoffice::ClassroomsController < BackofficeController
     
      def index
        @classrooms = Classroom.all
+       
      end
    
     def new
