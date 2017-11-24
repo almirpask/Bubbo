@@ -21,11 +21,10 @@ export default class List extends Component{
 		let list = this.props.questions || []
 		
 		return list.map(list => (
-			
+			console.log(list.id),
 			<tr key={list.id}>
 				<td>{list.number}</td>
 				<td>{list.description}</td>
-				<td><i className="material-icons">edit</i></td>
 				<td><a onClick={()=>(this.openAlternative(list.id))}><i className="material-icons" >border_color</i></a></td>
 			</tr>		
 		))

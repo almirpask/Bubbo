@@ -45,6 +45,10 @@ export default class Application extends Component{
 	refreshAlternatives(){
 		$.get(`/backoffice/alternatives/question/${this.state.question_id}.json`,{},(data) => {
 			this.setState({alternatives: data})
+			setTimeout(()=>{
+				console.log("refresh")
+				console.log(this.state.alternatives)
+			},10)
 			
 		})
 	}

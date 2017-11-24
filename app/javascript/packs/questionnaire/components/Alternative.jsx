@@ -25,7 +25,9 @@ export default class Question extends Component{
     changeAnswer(event){
         
         this.setState({answer: !this.state.answer })
-        console.log(this.state.answer)
+        setTimeout(() =>{
+            console.log(this.state.answer)
+        },10)
     }
     
     componentWillReceiveProps(nextProps){
@@ -52,8 +54,8 @@ export default class Question extends Component{
                 this.props.refreshAlternatives()
             })
         }else{
-            console.log(alternative);
-            $.post('/backoffice/alternatives', {alternative}, data => {console.log(data)}).done(()=> this.props.refreshAlternatives())
+            // console.log(alternative);
+            $.post('/backoffice/alternatives', {alternative}, data => {console.log("show data")}).done(()=> this.props.refreshAlternatives())
         }
         
     }
@@ -68,7 +70,9 @@ export default class Question extends Component{
         }
         console.log(`id=${id} - update=${update}`)
     }
- 
+    showAnswer(){
+        console.log(this.state.answer);
+    }
     componentDidMount(){
         $('.modal').modal();
     }
@@ -77,7 +81,7 @@ export default class Question extends Component{
             <div>
                 <div id="alternative" className="modal modal-fixed-footer">
                     <div className="modal-content">
-                        <h4>Alternativas </h4>
+                        <h4 onClick={this.showAnswer.bind(this)}>Alternativas </h4>
                         <div className="row border">
                             <div className="col s12">
                                 <div className="col s4">

@@ -10,9 +10,9 @@ export default class AlternativesList extends Component{
 		let list = this.props.alternatives || []
 		
 		return list.map(list => (
-			
+			console.log(list),
 			<tr key={list.id}>
-				<td>{list.answer ? "Verdadeira" : "Falsa"}</td>
+				<td>{(list.answer)? "Verdadeira" : "Falsa"}</td>
 				<td>{list.description}</td>
 				<td><a href="javascript:void(0);"  onClick={() => (this.props.handleEdit(list.id, true))}><i className="material-icons">edit</i></a></td>
 			</tr>		
