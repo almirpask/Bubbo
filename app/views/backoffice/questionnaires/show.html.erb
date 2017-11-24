@@ -1,0 +1,83 @@
+<div id="basic-form" class="section">
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <h4 class="header2"><spam class=" yellow-text text-darken-4">Questionário:</spam> <%= @questionnaire.theme %></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <p class="header2">Alunos x Perguntas</p>
+                            </div>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Aluno</th>
+                                        <th>Pergunta</th>
+                                        <th>Alternativa</th>
+                                        <th>Resposta</th>                         
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @answers.each do |answer|%>
+                                        <tr>
+                                            <td> <%= answer.user.name %> </td>
+                                            <td> <%= answer.alternative.question.description %> </td>
+                                            <td> <%= answer.alternative.description %> </td>
+                                            <td> <%= answer.alternative.answer ? "Correto" : "Errado" %> </td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div id="chart_students_questions"></div>
+                        </div>
+
+                        
+                            <script>
+                                window.answers = <%== @answers.to_json %>;
+                                window.totalPerAlternative = <%== @total_per_alternative.to_json %>;
+                                window.total_per_json = <%== @total_per_json.to_json %>;
+                            </script>
+
+                            
+                        
+                        
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col s12">
+                                <p class="header2">Perguntas x Escolhas</p>
+                            </div>
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>Pergunta</th>
+                                        <th>Numero de Escolhas</th>                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @total_per_alternative.each do |tpa|%>
+                                        <tr>
+                                            <td> <%= tpa.alternative.description %> </td>
+                                            <td> <%= tpa.total %></td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%= javascript_pack_tag "questionnaire/charts" %>
+<%= render  "layouts/shareds/loader" %>

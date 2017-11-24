@@ -5,8 +5,9 @@
 
   <div class="row">
       <div class="input-field col s12 center">
-      <img src="http://demo.geekslabs.com/materialize/v3.1/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-      <p class="center login-form-text">Registresse!</p>
+      <!-- <i class="material-icons circle responsive-img valign profile-image-login">person</i> -->
+      <!-- <img src="http://demo.geekslabs.com/materialize/v3.1/images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login"> -->
+      <p class="center login-form-text">Registre-se</p>
       <%= devise_error_messages! %>
       </div>
   </div>
@@ -14,37 +15,30 @@
   <div class="row margin">
     <div class="input-field col s12">
         <i class="material-icons prefix">person_outline</i>
-        <%= f.label :name, class: 'center-align' %>
+        <%= f.label :name, "Nome", class: 'center-align' %>
         <%= f.text_field :name, autofocus: true %>
     </div>
   </div>
 
   <div class="row margin">
     <div class="input-field col s12">
-        <i class="material-icons prefix">person_outline</i>
-        <%= f.label :email, class: 'center-align' %>
+        <i class="material-icons prefix">mail</i>
+        <%= f.label :email,"E-mail", class: 'center-align' %>
         <%= f.email_field :email%>
     </div>
   </div>
 
- 
-
   <div class="row margin">
     <div class="input-field col s12">
-      <i class="material-icons prefix">lock_outline</i>
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+        <i class="material-icons prefix">assignment_ind</i>
+        <%= f.label :ra, "RA", class: 'center-align' %>
+        <%= f.text_field :ra%>
     </div>
   </div>
 
-  <div class="row margin">
-    <div class="input-field col s12"> 
-      <i class="material-icons prefix">lock_outline</i>
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+  <div>
+      <%= f.password_field :password, value:"123456" , autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, value:"123456", autocomplete: "off" %>
   </div>
 
 

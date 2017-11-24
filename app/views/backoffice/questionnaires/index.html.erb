@@ -21,6 +21,7 @@
                                         <th>Tema</th>
                                         <th>Ativo</th>
                                         <th></th>
+                                        <th></th>
                                         
                                     </tr>
                                 </thead>
@@ -30,6 +31,11 @@
                                             <td> <%= questionnaire.id %> </td>
                                             <td> <%= questionnaire.theme %> </td>
                                             <td> <%= (questionnaire.active) ? 'Ativo' : 'Inativo' ;%> </td>
+                                            <td>
+                                                <%= link_to backoffice_questionnaire_path(questionnaire.id)do %>
+                                                    <i class="material-icons">search</i>
+                                                <% end %>
+                                            </td>
                                             <td>
                                                 <%= link_to edit_backoffice_questionnaire_path(questionnaire.id)do %>
                                                     <i class="material-icons">edit</i>

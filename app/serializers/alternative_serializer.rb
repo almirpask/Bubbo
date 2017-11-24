@@ -1,3 +1,3 @@
 class AlternativeSerializer < ActiveModel::Serializer
-  attributes :id, :description
+  attributes :id, :description, :answer
 end

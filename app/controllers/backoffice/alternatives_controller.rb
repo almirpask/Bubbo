@@ -32,10 +32,8 @@ class Backoffice::AlternativesController <  BackofficeController
 	def question
         @id = params.permit(:id)
         @alternatives = Alternative.where(:question_id => @id[:id])
-        
-        respond_to do |format|
-            format.json { render json: @alternatives}
-        end
+		
+		render json: @alternatives
     end
 	
 	
